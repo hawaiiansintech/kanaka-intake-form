@@ -94,6 +94,7 @@
 			// insert kanakaintake record 
 			let rv = await createKanakaIntake(combined, 'public', '');
 			console.log("rv: ", rv);
+			alert("Added data to database!");
 		} catch (error) {
 			console.log('error: ', error);
 			message = message + '; ' + error?.message;
@@ -142,14 +143,11 @@
 		<div id="step-off">Step 3: Upload Docs</div>
         <form on:submit|preventDefault={stepOne}>
             <div class="form-item-wrapper">
-                <label for="family_name" class="form-label">Family Name</label>
                 <input id="family_name" name="family_name" type="text" placeholder="Family Name" class="form-field" /><br />
-                <label for="given_name" class="form-label">Given Name</label>
                 <input id="given_name" name="given_name" type="text" placeholder="Given Name" class="form-field" /><br />
-                <label for="birth_place" class="form-label">Birthplace</label>
                 <input id="birth_place" name="birth_place" type="text" placeholder="Birthplace" class="form-field" /><br />
-                <label for="birth_date" class="form-label">Birthdate</label>
-                <input id="birth_date" name="birth_date" type="text" placeholder="Birthdate" class="form-field" /><br />
+				<label for="birth_date">Birthdate</label><br />
+                <input id="birth_date" name="birth_date" type="date" placeholder="Birthdate" class="form-field" /><br />
             </div>
             <Button on:click={cancel} color="secondary">Cancel</Button>
             <Button>Next</Button>
@@ -168,25 +166,19 @@
         <h3>Mother</h3>
         <form on:submit|preventDefault={stepTwo}>
             <div class="form-item-wrapper">
-                <label for="mom_family_name" class="form-label">Mothers Family Name</label>
                 <input id="mom_family_name" name="mom_family_name" type="text" placeholder="Mothers Family Name" class="form-field" /><br />
-                <label for="mom_given_name" class="form-label">Mothers Given Name</label>
                 <input id="mom_given_name" name="mom_given_name" type="text" placeholder="Mothers Given Name" class="form-field" /><br />
-                <label for="mom_birth_place" class="form-label">Mothers Birthplace</label>
                 <input id="mom_birth_place" name="mom_birth_place" type="text" placeholder="Mothers Birthplace" class="form-field" /><br />
-                <label for="mom_birth_date" class="form-label">Mothers Birthdate</label>
-                <input id="mom_birth_date" name="mom_birth_date" type="text" placeholder="Mothers Birthdate" class="form-field" /><br />
+				<label for="mom_birth_date">Birthdate</label><br />
+                <input id="mom_birth_date" name="mom_birth_date" type="date" placeholder="Mothers Birthdate" class="form-field" /><br />
             </div>
             <h3>Father</h3>
             <div class="form-item-wrapper">
-                <label for="dad_family_name" class="form-label">Fathers Family Name</label>
                 <input id="dad_family_name" name="dad_family_name" type="text" placeholder="Fathers Family Name" class="form-field" /><br />
-                <label for="dad_given_name" class="form-label">Fathers Given Name</label>
                 <input id="dad_given_name" name="dad_given_name" type="text" placeholder="Fathers Given Name" class="form-field" /><br />
-                <label for="dad_birth_place" class="form-label">Fathers Birthplace</label>
                 <input id="dad_birth_place" name="dad_birth_place" type="text" placeholder="Fathers Birthdate" class="form-field" /><br />
-                <label for="dad_birth_date" class="form-label">Fathers Birthdate</label>
-                <input id="dad_birth_date" name="dad_birth_date" type="text" placeholder="Fathers Birthdate" class="form-field" /><br />
+				<label for="dad_birth_date">Birthdate</label><br />
+                <input id="dad_birth_date" name="dad_birth_date" type="date" placeholder="Fathers Birthdate" class="form-field" /><br />
             </div>
           <Button on:click={cancel} color="secondary">Cancel</Button>
           <Button>Next</Button>
@@ -201,7 +193,7 @@
 		<div id="step-on">Step 3: Upload Docs</div>
 
         <form on:submit|preventDefault={requestFormSubmit}>
-			<input type="file" id="support_doc" name="support_doc">
+			<input type="file" id="file_id" name="filename">
             <Button on:click={cancel} color="secondary">Cancel</Button>
             <Button>Finish</Button>	
     	</form>

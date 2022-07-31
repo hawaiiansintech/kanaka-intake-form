@@ -267,6 +267,7 @@ export async function createKanakaIntake(intake: any, role: string, jwt_token: s
   // }
 
   let params: any = {...intake};
+  delete params.filename;
   
   console.log("params ", params);
 
