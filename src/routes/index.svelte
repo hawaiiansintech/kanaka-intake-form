@@ -196,3 +196,4 @@
 
 
 <div style="color:red" id="warn_msg">{message}</div>
+<div><a href="/review">View Submitted Records</a></div>
