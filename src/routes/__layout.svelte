@@ -2,15 +2,14 @@
 	import LoginStatusBox from '$lib/components/LoginStatusBox.svelte';
 	import Nav from '$lib/components/Nav.svelte';
 </script>
-
 <div>
-	<h1>Mookuauhau Website</h1>
+	<Nav />
+</div>
+<div>
 	<main>
 		<slot />
 	</main>
 </div>
-<div>
-	<Nav />
-</div>
 
-<LoginStatusBox />
+
+

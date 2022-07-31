@@ -305,4 +305,3 @@ export async function createKanakaIntake(intake: any, role: string, jwt_token: s
 
   return await gqlRequest(query, variables, jwt_token, addHeaders);
 }
-
