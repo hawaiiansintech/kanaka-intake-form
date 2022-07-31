@@ -259,3 +259,50 @@ export async function delete_mookuauhau(mookuauhau_id: number|undefined, role: s
     return await gqlRequest(query, variables, jwt_token, addHeaders);
 }
 
+export async function createKanakaIntake(intake: any, role: string, jwt_token: string) {
+  console.log("createKanakaIntake()");
+
+  // if (!jwt_token) {
+  //     return;
+  // }
+
+  let params: any = {...intake};
+  
+  console.log("params ", params);
+
+  const query = gql`
+  mutation insertKanakaIntake($object:kanakaintake_insert_input!) {
+    insert_kanakaintake_one(object: $object) {
+      birth_date
+      birth_place
+      dad_birth_date
+      dad_birth_place
+      dad_family_name
+      dad_given_name
+      family_name
+      file_id
+      filename
+      given_name
+      mom_birth_date
+      mom_birth_place
+      mom_family_name
+      mom_given_name
+      mookuauhau_id
+      name
+      owner_id
+      request_status
+    }
+  }
+  
+  `;
+  const variables = {
+      object: params,
+  };
+
+  let addHeaders = {
+      "x-hasura-role": role
+  };
+
+  return await gqlRequest(query, variables, jwt_token, addHeaders);
+}
+
