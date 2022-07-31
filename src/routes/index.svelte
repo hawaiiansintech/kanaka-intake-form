@@ -5,7 +5,7 @@
     import Card from "@smui/card";
     import PrimaryAction from "@smui/card";
 
-	let step = 'welcome';
+	let step = 'add_person';
 	let message = ''; // warning messages
     let personalData = {};
     let familyData = {};
@@ -103,7 +103,7 @@
 </script>
 
 
-{#if $isSignedIn === false}
+{#if $isSignedIn === false || $user === null}
 
 	<div id="welcome">
 		<h3 class="e_komo_mai">E Komo Mai</h3>
@@ -121,7 +121,7 @@
 	</div>
 {:else if step === 'add_person'}
 	<div id="add_person">
-		<h3>Hello, [{$user}]</h3>
+		<h3>Hello {$user.displayName}</h3>
 
         <div class="card-display">
             <div class="card-container">
