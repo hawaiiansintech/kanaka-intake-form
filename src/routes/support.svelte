@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GedcomFileList from '$lib/components/GedcomFileList.svelte';
+import { createKanakaIntake } from '$lib/graphql-access';
 	// import { createGenealogy } from '$lib/graphql-access';
 	// import { isSignedIn, jwt_token, nhost, user } from '$lib/nhost';
 
@@ -25,38 +26,17 @@
 		}
 		console.log('submitData: ', submitData);
 
-		// console.log("submitData['gedcomfile']: ", submitData['gedcomfile']);
-
-		// try {
-		// 	const data = await nhost.storage.upload({ file: submitData['gedcomfile'] });
-		// 	console.log(data);
-		// 	if (data.error) {
-		// 		console.log('data.error: ', data.error);
-		// 		message = data.error.message;
-		// 	} else {
-		// 		message = 'success';
-
-		// 		//fileMetadata: Object { id: "0cc3058c-85cd-4a4f-87e6-c1833860e6d1", name: "kekoolani_07-10-2011.ged", size: 1493829, … }
-
-		// 		// if fileupload works, also insert mookuauhau record with reference
-		// 		if ($user && $user.id) {
-		// 			const genealogy = {
-		// 				name: submitData['name'] || data?.fileMetadata?.name,
-		// 				owner_id: $user.id,
-		// 				filename: data?.fileMetadata?.name,
-		// 				file_id: data?.fileMetadata?.id,
-		// 				load_status: 'new'
-		// 			};
-		// 			await createGenealogy(genealogy, 'user', $jwt_token);
-		// 		} else {
-		// 			throw Error('missing user id');
-		// 		}
-		// 	}
-		// } catch (error) {
-		// 	console.log('error: ', error);
-		// 	message = message + '; ' + error?.message;
-		// }
+		try {
+			// insert kanakaintake record 
+			let rv = await createKanakaIntake(submitData, 'public', '');
+			console.log("rv: ", rv);
+		} catch (error) {
+			console.log('error: ', error);
+			message = message + '; ' + error?.message;
+		}
 	}
+
+	
 </script>
 
 <head>
