@@ -98,7 +98,7 @@ button {
   border-radius: 8px;
 }
 
-div .step-off {
+.step-off {
   left: 0%;
   right: 0%;
   top: 0%;
@@ -108,9 +108,11 @@ div .step-off {
 
   background: #C1C7D0;
   border-radius: 100px;
+  color: white;
+  padding: 5px;
 }
 
-div .step-on {
+.step-on {
   left: 0%;
   right: 0%;
   top: 0%;
@@ -120,6 +122,8 @@ div .step-on {
 
   background: #091E42;
   border-radius: 100px;
+  color: white;
+  padding: 5px;
 }
 
 .login-btn {
@@ -141,4 +145,5 @@ div .step-on {
 .form-field {
   width: 472px;
   height: 36px;
+  margin: 5px;
 }

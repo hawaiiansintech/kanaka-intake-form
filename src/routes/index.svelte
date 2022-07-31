@@ -94,7 +94,7 @@
 			// insert kanakaintake record 
 			let rv = await createKanakaIntake(combined, 'public', '');
 			console.log("rv: ", rv);
-			alert("Added data to database!");
+			alert("Data added, pending review of team.");
 		} catch (error) {
 			console.log('error: ', error);
 			message = message + '; ' + error?.message;
@@ -137,10 +137,8 @@
 {:else if step === 'step_one'}
 	<div id="step_one">
 		<h3>Step 1: Basic Info</h3>
-		<div id="step-on">Step 1<br />
-            Basic Info</div>
-		<div id="step-off">Step 2: Relationship</div>
-		<div id="step-off">Step 3: Upload Docs</div>
+		<span class="step-on">Step 1: Basic Info</span> -> <span class="step-off">Step 2: Relationship</span> -> <span class="step-off">Step 3: Upload Docs</span>
+		<br />
         <form on:submit|preventDefault={stepOne}>
             <div class="form-item-wrapper">
                 <input id="family_name" name="family_name" type="text" placeholder="Family Name" class="form-field" /><br />
@@ -159,10 +157,8 @@
 	<!-- TODO: add edit/pre-populate -->
 	<div id="step_two">
 		<h2>Step 2: Relationship</h2>
-		<div id="step-off">Step 1: Basic Info</div>
-		<div id="step-on">Step 2: Relationship</div>
-		<div id="step-off">Step 3: Upload Docs</div>
-
+		<span class="step-off">Step 1: Basic Info</span> -> <span class="step-on">Step 2: Relationship</span> -> <span class="step-off">Step 3: Upload Docs</span>
+		<br />
         <h3>Mother</h3>
         <form on:submit|preventDefault={stepTwo}>
             <div class="form-item-wrapper">
@@ -187,11 +183,9 @@
 
 {:else if step === 'step_three'}
 	<div id="step_three">
-		<h3>Step 3: Upload Docs</h3>
-		<div id="step-off">Step 1: Basic Info</div>
-		<div id="step-off">Step 2: Relationship</div>
-		<div id="step-on">Step 3: Upload Docs</div>
-
+		<h3>Step 3: Upload Docs</h3>		
+		<span class="step-off">Step 1: Basic Info</span> -> <span class="step-off">Step 2: Relationship</span> -> <span class="step-on">Step 3: Upload Docs</span>
+		<br />
         <form on:submit|preventDefault={requestFormSubmit}>
 			<input type="file" id="file_id" name="filename">
             <Button on:click={cancel} color="secondary">Cancel</Button>
