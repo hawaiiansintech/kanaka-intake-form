@@ -1,11 +1,5 @@
 <div class="nav">
-	<div><a href="/"> Home </a></div>
-	<div><a href="/search"> Search </a></div>
-	<div><a href="/login"> Login </a></div>
-	<div><a href="/register"> Register </a></div>
-	<div><a href="/profile"> Profile </a></div>
-	<div><a href="/upload"> Upload </a></div>
-	<div><a href="/support"> Support Documentation </a></div>
+	<div><a href="/"> Team Form </a></div>
 </div>
 
 <style>
@@ -15,13 +9,17 @@
 		block-size: fit-content;
 	}
 	.nav div {
-		border-style: solid;
-		border-color: gray;
-		border-width: 1px;
+		position: absolute;
+		height: 40px;
+		left: 0%;
+		right: 0%;
+		top: 0px;
 
-		text-align: center;
-		width: fit-content;
-		min-width: 100px;
-		block-size: fit-content;
+		/* Neutral/N800 */
+
+		background: #172B4D;
+		/* elevation/4 */
+
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.16);
 	}
 </style>

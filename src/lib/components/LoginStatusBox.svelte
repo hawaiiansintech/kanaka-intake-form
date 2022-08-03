@@ -15,18 +15,3 @@ import { isSignedIn, jwt_token, user } from "$lib/nhost";
 {/if}
 
 </div>
-
-<style>
-    .loginstatus {
-        border-style: solid;
-        border-color: gray;
-        border-width: 1px;
-        display: flex;
-        width: fit-content;
-    }
-	.truncate {
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		overflow: hidden;
-	}
-</style>
